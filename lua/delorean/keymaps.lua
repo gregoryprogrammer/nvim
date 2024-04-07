@@ -90,17 +90,19 @@ keymap('n', '<leader>tc', "<cmd>tabclose<cr>" )
 keymap('n', '<leader>tt', "<cmd>tabs<cr>" )
 
 keymap("n", "<leader>gp", "<cmd>GitGutterPreviewHunk<cr>", { desc = "Git preview hunk" })
-keymap("n", "<leader>gH", "<cmd>GitGutterPrevHunk<cr>", { desc = "Git prev hunk" })
-keymap("n", "<leader>gh", "<cmd>GitGutterNextHunk<cr>", { desc = "Git next hunk" })
+keymap("n", "<leader>gH", "<cmd>GitGutterPrevHunk<cr>zz", { desc = "Git prev hunk" })
+keymap("n", "<leader>gh", "<cmd>GitGutterNextHunk<cr>zz", { desc = "Git next hunk" })
 keymap("n", "<leader>gu", "<cmd>GitGutterUndoHunk<cr>", { desc = "Git undo hunk" })
 keymap("n", "<leader>gg", "<cmd>GitGutterStageHunk<cr>", { desc = "Git stage hunk" })
 keymap("n", "<leader>gd", "<cmd>Git diff<cr>", { desc = "Git diff" })
 keymap("n", "<leader>gb", "<cmd>Git blame<cr>", { desc = "Git blame" })
-keymap("n", "<leader>gb", "<cmd>pclose<cr>", { desc = "Git close" })
+keymap("n", "<leader>gq", "<cmd>pclose<cr>", { desc = "Git close" })
 
 
 -- Move lines downward and upward
-keymap("n", "<A-j>", "<cmd>m .+1<cr>==")
+-- TODO
+-- keymap("n", "<A-j>", "<cmd>m .+1<cr>==")
+-- keymap("n", "<A-k>", "<cmd>m .-2<cr>==")
 
 -- Move highlighted block
 keymap("v", "<J>", ":m '>+1<cr>gv=gv")
@@ -120,5 +122,13 @@ keymap("x", "<leader>p", "\"_dP")
 
 
 keymap("n", "<leader>fx", "<cmd>!chmod +x %<cr>", { silent = true })
+keymap("n", "<leader>fX", "<cmd>!chmod -x %<cr>", { silent = true })
 
 keymap("n", "<leader>fa", "<cmd>Ouroboros<cr>", { desc = "Switch cpp <-> h" })
+
+keymap("n", "<leader>mu", function ()
+    print("Hello")
+    local config_path = vim.fn.stdpath("config")
+    print(config_path)
+    -- TODO git pull
+end)
