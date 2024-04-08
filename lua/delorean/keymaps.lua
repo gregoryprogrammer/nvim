@@ -84,11 +84,6 @@ keymap("n", "<leader>gc", telescope.git_commits, { desc = "Git commits" })
 keymap("n", "<leader>gb", telescope.git_branches, { desc = "Git branches" })
 keymap("n", "<leader>gb", telescope.git_branches, { desc = "Git branches" })
 
--- Tabs
-keymap('n', '<leader>tn', "<cmd>tabnew<cr>" )
-keymap('n', '<leader>tc', "<cmd>tabclose<cr>" )
-keymap('n', '<leader>tt', "<cmd>tabs<cr>" )
-
 keymap("n", "<leader>gp", "<cmd>GitGutterPreviewHunk<cr>", { desc = "Git preview hunk" })
 keymap("n", "<leader>gH", "<cmd>GitGutterPrevHunk<cr>zz", { desc = "Git prev hunk" })
 keymap("n", "<leader>gh", "<cmd>GitGutterNextHunk<cr>zz", { desc = "Git next hunk" })
@@ -98,15 +93,22 @@ keymap("n", "<leader>gd", "<cmd>Git diff<cr>", { desc = "Git diff" })
 keymap("n", "<leader>gb", "<cmd>Git blame<cr>", { desc = "Git blame" })
 keymap("n", "<leader>gq", "<cmd>pclose<cr>", { desc = "Git close" })
 
+-- Lazygit
+local Terminal  = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
 
--- Move lines downward and upward
--- TODO
--- keymap("n", "<A-j>", "<cmd>m .+1<cr>==")
--- keymap("n", "<A-k>", "<cmd>m .-2<cr>==")
+function _lazygit_toggle()
+  lazygit:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "<leader>gl", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 
 -- Move highlighted block
 keymap("v", "J", ":m '>+1<cr>gv=gv")
 keymap("v", "K", ":m '<-2<cr>gv=gv")
+-- TODO Move lines downward and upward
+-- keymap("n", "<A-j>", "<cmd>m .+1<cr>==")
+-- keymap("n", "<A-k>", "<cmd>m .-2<cr>==")
 
 -- Keep cursor in place after join
 keymap("n", "J", "mzJ`z")
