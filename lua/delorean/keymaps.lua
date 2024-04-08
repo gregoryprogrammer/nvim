@@ -105,8 +105,8 @@ keymap("n", "<leader>gq", "<cmd>pclose<cr>", { desc = "Git close" })
 -- keymap("n", "<A-k>", "<cmd>m .-2<cr>==")
 
 -- Move highlighted block
-keymap("v", "<J>", ":m '>+1<cr>gv=gv")
-keymap("v", "<K>", ":m '<-2<cr>gv=gv")
+keymap("v", "J", ":m '>+1<cr>gv=gv")
+keymap("v", "K", ":m '<-2<cr>gv=gv")
 
 -- Keep cursor in place after join
 keymap("n", "J", "mzJ`z")
