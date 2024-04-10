@@ -43,6 +43,12 @@ keymap("v", "<Leader>P", "\"+P")
 -- Search for the word under cursor and jump back
 keymap("n", "<leader>sw", "*``", { silent = true })
 keymap("n", "<leader>sW", "#``", { silent = true })
+keymap('n', '<leader>sa', function()
+    local cword = vim.fn.expand("<cword>");
+    vim.cmd("/" .. cword)  -- Highlight current word
+	telescope.grep_string({ search = cword });
+end)
+
 -- Disable (cancel) highlight of the search
 keymap("n", "<leader>sq", ":noh<cr><esc>:cclose<cr>", { silent = true, desc = "Clear search" })
 
@@ -65,10 +71,6 @@ keymap('n', '<Leader>fG', telescope.git_files, { desc = "Find git files" })
 keymap('n', '<leader>fg', telescope.live_grep, { desc = "Live grep" })
 keymap('n', '<leader>fb', telescope.buffers, { desc = "Find buffers" })
 keymap('n', '<leader>fh', telescope.help_tags, { desc = "Help tags" })
-keymap('n', '<leader>ps', function()
-	telescope.grep_string({ search = vim.fn.input("Grep > ") });
-end)
-
 keymap('n', '<leader>fo', "<cmd>BufExplorer<cr>")
 
 -- NERDTree
