@@ -114,9 +114,11 @@ keymap("v", "K", ":m '<-2<cr>gv=gv")
 
 -- Keep cursor in place after join
 keymap("n", "J", "mzJ`z")
+
 -- Half page jumping, keep cursor in the middle
-keymap("n", "<c-d>", "<c-d>zz")
-keymap("n", "<c-u>", "<c-u>zz")
+-- keymap("n", "<c-d>", "<c-d>zz")
+-- keymap("n", "<c-u>", "<c-u>zz")
+
 -- Keep searches in the middle
 keymap("n", "n", "nzzzv")
 keymap("n", "N", "Nzzzv")
