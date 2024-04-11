@@ -80,17 +80,15 @@ keymap('n', '<leader>fr', "<cmd>NERDTreeRefreshRoot<cr>" )
 keymap('n', '<leader>fl', "<cmd>NERDTreeFind<cr>" )
 
 -- Git
-keymap("n", "<leader>gs", telescope.git_status, { desc = "Git status" })
 keymap("n", "<leader>gS", telescope.git_stash, { desc = "Git stash" })
-keymap("n", "<leader>gc", telescope.git_commits, { desc = "Git commits" })
-keymap("n", "<leader>gb", telescope.git_branches, { desc = "Git branches" })
-keymap("n", "<leader>gb", telescope.git_branches, { desc = "Git branches" })
+keymap("n", "<leader>gC", telescope.git_commits, { desc = "Git commits" })
+keymap("n", "<leader>gB", telescope.git_branches, { desc = "Git branches" })
 
 keymap("n", "<leader>gp", "<cmd>GitGutterPreviewHunk<cr>", { desc = "Git preview hunk" })
 keymap("n", "<leader>gH", "<cmd>GitGutterPrevHunk<cr>zz", { desc = "Git prev hunk" })
 keymap("n", "<leader>gh", "<cmd>GitGutterNextHunk<cr>zz", { desc = "Git next hunk" })
 keymap("n", "<leader>gu", "<cmd>GitGutterUndoHunk<cr>", { desc = "Git undo hunk" })
-keymap("n", "<leader>gg", "<cmd>GitGutterStageHunk<cr>", { desc = "Git stage hunk" })
+keymap("n", "<leader>gs", "<cmd>GitGutterStageHunk<cr>", { desc = "Git stage hunk" })
 keymap("n", "<leader>gd", "<cmd>Git diff<cr>", { desc = "Git diff" })
 keymap("n", "<leader>gb", "<cmd>Git blame<cr>", { desc = "Git blame" })
 keymap("n", "<leader>gq", "<cmd>pclose<cr>", { desc = "Git close" })
@@ -103,7 +101,7 @@ function _lazygit_toggle()
   lazygit:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>gl", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true})
 
 -- Move highlighted block
 keymap("v", "J", ":m '>+1<cr>gv=gv")
