@@ -1,4 +1,4 @@
-return {
+local plugins = {
     {
         'folke/tokyonight.nvim',
         as = 'tokyonight',
@@ -84,6 +84,7 @@ return {
             vim.g.NERDTrimTrailingWhitespace = 1
         end
     },
+
     {
         'scrooloose/nerdtree',
         config = function ()
@@ -118,4 +119,10 @@ return {
     {
         'akinsho/toggleterm.nvim', version = "*", config = true
     },
+
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
 }
+
+return plugins
