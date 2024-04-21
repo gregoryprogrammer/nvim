@@ -1,4 +1,5 @@
 local telescope = require('telescope.builtin')
+local theme = require("delorean.theme")
 
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
@@ -51,6 +52,19 @@ end)
 
 -- Disable (cancel) highlight of the search
 keymap("n", "<leader>sq", ":noh<cr><esc>:cclose<cr>", { silent = true, desc = "Clear search" })
+
+-- Theme
+keymap("n", "<leader>mtd", function()
+    theme_default()
+end, { desc = "Theme default" })
+
+keymap("n", "<leader>mt1", function()
+    theme_config_1()
+end, { desc = "Theme 1" })
+
+keymap("n", "<leader>mt2", function()
+    theme_config_2()
+end, { desc = "Theme 2" })
 
 -- Window operations
 keymap("n", "<leader>ws", "<cmd>split<cr>", { desc = "Split" })
