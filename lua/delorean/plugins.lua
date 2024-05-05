@@ -57,11 +57,6 @@ local plugins = {
         }
     },
 
-    {
-        "jakemason/ouroboros",
-        dependencies = {"plenary"},
-    },
-
     'mbbill/undotree',
 
     -- Git integration
@@ -121,8 +116,15 @@ local plugins = {
     },
 
     "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
+    -- "williamboman/mason-lspconfig.nvim",
+
     "neovim/nvim-lspconfig",
+
+    {
+        "jose-elias-alvarez/null-ls.nvim",
+        dependencies = {"plenary"},
+        event = "VeryLazy",
+    },
 }
 
 return plugins

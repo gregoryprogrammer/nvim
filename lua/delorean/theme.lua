@@ -55,6 +55,8 @@ function configure_alacritty(template, c)
 
     save_file(ALACRITTY_TOML, template)
 
+    -- vim.cmd("<C-w>=<cr>")
+
     return template
 end
 

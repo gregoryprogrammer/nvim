@@ -1,7 +1,7 @@
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
-require("delorean.lazy")
 require("delorean.setup")
 require("delorean.keymaps")
--- require("delorean.lsp_config")
+
+-- Configs
+require("delorean.configs.mason")
+require("delorean.configs.lsp")
+require("delorean.configs.null-ls")
