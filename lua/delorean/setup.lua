@@ -61,12 +61,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     command = "GitGutter",
 })
 
-vim.api.nvim_create_autocmd("BufWrite", {
-    pattern = { "*.py" },
-    command = "Autoformat",
-})
-
-
 local function window()
     return vim.api.nvim_win_get_number(0)
 end
