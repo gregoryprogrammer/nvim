@@ -9,6 +9,7 @@ local plugins = {
         end,
         config = function()
             vim.cmd.colorscheme('tokyonight-night')
+            vim.cmd("highlight Todo guifg=#EF3A8E guibg=transparent")
         end
     },
 
