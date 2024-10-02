@@ -86,6 +86,7 @@ keymap('n', '<leader>fg', telescope.live_grep, { desc = "Live grep" })
 keymap('n', '<leader>fb', telescope.buffers, { desc = "Find buffers" })
 keymap('n', '<leader>fh', telescope.help_tags, { desc = "Help tags" })
 keymap('n', '<leader>fo', "<cmd>BufExplorer<cr>")
+keymap('n', '<leader>fn', "<cmd>vnew<cr>")
 
 -- NERDTree
 keymap('n', '<leader>ft', "<cmd>NERDTreeFocus<cr>" )
