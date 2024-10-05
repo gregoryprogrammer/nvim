@@ -1,5 +1,6 @@
 local telescope = require('telescope.builtin')
 local theme = require("delorean.theme")
+local coding = require("delorean.coding")
 
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
@@ -95,6 +96,20 @@ keymap('n', '<leader>fr', "<cmd>NERDTreeRefreshRoot<cr>" )
 keymap('n', '<leader>fl', "<cmd>NERDTreeFind<cr>" )
 
 keymap('n', '<leader>jl', vim.lsp.buf.format )
+
+-- Comment frame
+-- autocmd FileType c,cpp nnoremap <Leader>cf :.-1read !,code-frame.py --lang cpp --text <cword><cr>
+-- autocmd FileType c,cpp vnoremap <Leader>cf y:.-1read !,code-frame.py --lang cpp --text "<c-r>""<cr>
+-- autocmd FileType bash,python nnoremap <Leader>cf :.-1read !,code-frame.py --lang bash --text <cword><cr>
+-- autocmd FileType bash,python vnoremap <Leader>cf y:.-1read !,code-frame.py --lang bash --text "<c-r>""<cr>
+-- autocmd FileType c,cpp nnoremap <Leader>ct O// TODO(gregory) <esc><S-A>
+
+keymap('n', '<leader>cf', function()
+    local cword = vim.fn.expand("<cword>");
+    local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+    local result = code_frame(cword, "cpp")
+    vim.api.nvim_buf_set_text(0, row - 1, 0, row - 1, 0, result)
+end, { desc = "" })
 
 -- Git
 keymap("n", "<leader>gS", telescope.git_stash, { desc = "Git stash" })
