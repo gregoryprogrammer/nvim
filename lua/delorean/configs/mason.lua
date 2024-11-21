@@ -4,6 +4,8 @@ opts = {
         "clangd",
         "clang-format",
         "black",
+        "pyright",
+        "isort"
     }
 }
    

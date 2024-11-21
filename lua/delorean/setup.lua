@@ -31,6 +31,10 @@ opt.expandtab = true
 opt.softtabstop = 4
 opt.autoindent = true -- copy indent from current line when starting new one
 
+-- Python indent
+vim.g.pyindent_open_paren = 4
+vim.g.pyindent_closed_paren_align_last_line = false
+
 opt.wrap = false
 
 -- Search settings
