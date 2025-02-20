@@ -5,7 +5,9 @@ opts = {
         "clang-format",
         "black",
         "pyright",
-        "isort"
+        "isort",
+        "json-lsp",
+        "prettier",
     }
 }
    

@@ -111,6 +111,13 @@ keymap('n', '<leader>cf', function()
     vim.api.nvim_buf_set_text(0, row - 1, 0, row - 1, 0, result)
 end, { desc = "" })
 
+keymap('n', '<leader>ee', function() vim.cmd(":!odin build .") end, { desc = "Run: odin build ." })
+keymap('n', '<leader>er', function() vim.cmd(":!odin run .") end, { desc = "Run: odin run ." })
+keymap('n', '<leader>ec', function() vim.cmd(":!odin check .") end, { desc = "Run: odin check ." })
+keymap('n', '<leader>et', function() vim.cmd(":!odin test .") end, { desc = "Run: odin test ." })
+keymap('n', '<leader>es', function() vim.cmd(":!odin strip-semicolon .") end, { desc = "Run: odin strip-semicolon ." })
+keymap('n', '<leader>ed', function() vim.cmd(":!odin doc .") end, { desc = "Run: odin doc ." })
+
 -- Git
 keymap("n", "<leader>gS", telescope.git_stash, { desc = "Git stash" })
 keymap("n", "<leader>gC", telescope.git_commits, { desc = "Git commits" })
