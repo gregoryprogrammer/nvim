@@ -8,4 +8,10 @@ lspconfig.clangd.setup{
 
 lspconfig.pyright.setup({})
 
+lspconfig.ols.setup {
+    init_options = {
+        checker_args = "-strict-style",
+    },
+}
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = function() end
