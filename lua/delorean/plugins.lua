@@ -122,7 +122,8 @@ local plugins = {
     "neovim/nvim-lspconfig",
 
     {
-        "jose-elias-alvarez/null-ls.nvim",
+        -- "jose-elias-alvarez/null-ls.nvim",
+        "nvimtools/none-ls.nvim",
         dependencies = {"plenary"},
         event = "VeryLazy",
     },
