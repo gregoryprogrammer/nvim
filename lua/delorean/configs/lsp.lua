@@ -11,6 +11,8 @@ lspconfig.pyright.setup({})
 lspconfig.ols.setup {
     init_options = {
         checker_args = "-strict-style",
+        enable_semantic_tokens = true,
+        enable_format = true,
     },
 }
 
