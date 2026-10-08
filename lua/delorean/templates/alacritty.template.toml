@@ -34,6 +34,10 @@ size = #_FONT_SIZE_#
 family = "#_FONT_NORMAL_FAMILY_#"
 style = "#_FONT_NORMAL_STYLE_#"
 
+[font.bold]
+family = "#_FONT_BOLD_FAMILY_#"
+style = "#_FONT_BOLD_STYLE_#"
+
 [font.italic]
 family = "#_FONT_ITALIC_FAMILY_#"
 style = "#_FONT_NORMAL_STYLE_#"

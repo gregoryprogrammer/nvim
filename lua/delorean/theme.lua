@@ -23,8 +23,10 @@ end
 function config_1()
     return {
         font_normal_family = "Terminus (TTF) for Windows",
+        font_bold_family = "Terminus (TTF) for Windows",
         font_italic_family = "Terminus (TTF) for Windows",
         font_normal_style = "Regular",
+        font_bold_style = "Regular",
         font_italic_style = "Regular",
         font_size = 9.0,
     }
@@ -33,12 +35,27 @@ end
 function config_2()
     return {
         font_normal_family = "Terminus (TTF) for Windows",
+        font_bold_family = "Terminus (TTF) for Windows",
         font_italic_family = "Terminus (TTF) for Windows",
         font_normal_style = "Bold",
+        font_bold_style = "Bold",
         font_italic_style = "Bold",
         font_size = 12.0,
     }
 end
+
+function config_3()
+    return {
+        font_normal_family = "Fixedsys Excelsior",
+        font_bold_family = "Fixedsys Excelsior",
+        font_italic_family = "Fixedsys Excelsior",
+        font_normal_style = "Regular",
+        font_bold_style = "Regular",
+        font_italic_style = "Regular",
+        font_size = 12.0,
+    }
+end
+
 
 function configure_alacritty(template, c)
     local HOME = os.getenv("HOME")
@@ -48,8 +65,10 @@ function configure_alacritty(template, c)
     template = read_file(ALACRITTY_TEMPLATE_TOML)
 
     template = template:gsub("#_FONT_NORMAL_FAMILY_#", c.font_normal_family)
+    template = template:gsub("#_FONT_BOLD_FAMILY_#", c.font_bold_family)
     template = template:gsub("#_FONT_ITALIC_FAMILY_#", c.font_italic_family)
     template = template:gsub("#_FONT_NORMAL_STYLE_#", c.font_normal_style)
+    template = template:gsub("#_FONT_BOLD_STYLE_#", c.font_bold_style)
     template = template:gsub("#_FONT_ITALIC_STYLE_#", c.font_italic_style)
     template = template:gsub("#_FONT_SIZE_#", c.font_size)
 
@@ -75,5 +94,11 @@ end
 function theme_config_2()
     print("Theme config 2")
     c = config_2()
+    configure_alacritty(template, c)
+end
+
+function theme_config_3()
+    print("Theme config 3")
+    c = config_3()
     configure_alacritty(template, c)
 end

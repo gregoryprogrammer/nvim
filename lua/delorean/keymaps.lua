@@ -67,6 +67,10 @@ keymap("n", "<leader>mt2", function()
     theme_config_2()
 end, { desc = "Theme 2" })
 
+keymap("n", "<leader>mt3", function()
+    theme_config_3()
+end, { desc = "Theme 3" })
+
 -- Window operations
 keymap("n", "<leader>ws", "<cmd>split<cr>", { desc = "Split" })
 keymap("n", "<leader>wv", "<cmd>vsplit<cr>", { desc = "Vertical split" })

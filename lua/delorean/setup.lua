@@ -38,7 +38,7 @@ vim.g.pyindent_closed_paren_align_last_line = false
 opt.wrap = false
 
 -- Search settings
-opt.ignorecase = true
+opt.ignorecase = false
 opt.smartcase = true
 
 opt.cursorline = true
