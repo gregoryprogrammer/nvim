@@ -136,6 +136,8 @@ keymap("n", "<leader>gd", "<cmd>Git diff<cr>", { desc = "Git diff" })
 keymap("n", "<leader>gb", "<cmd>Git blame<cr>", { desc = "Git blame" })
 keymap("n", "<leader>gq", "<cmd>pclose<cr>", { desc = "Git close" })
 
+keymap("n", "<leader>nn", "<cmd>TodoTelescope<cr>", { desc = "Todo Telescope" })
+
 -- Lazygit
 local Terminal  = require('toggleterm.terminal').Terminal
 local lazygit = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })
