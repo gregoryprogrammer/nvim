@@ -136,7 +136,10 @@ keymap("n", "<leader>gd", "<cmd>Git diff<cr>", { desc = "Git diff" })
 keymap("n", "<leader>gb", "<cmd>Git blame<cr>", { desc = "Git blame" })
 keymap("n", "<leader>gq", "<cmd>pclose<cr>", { desc = "Git close" })
 
-keymap("n", "<leader>nn", "<cmd>TodoTelescope<cr>", { desc = "Todo Telescope" })
+keymap("n", "<leader>na", "<cmd>TodoTelescope<cr>", { desc = "Todo Telescope" })
+keymap("n", "<leader>nn", "<cmd>TodoTelescope keywords=TODO<cr>", { desc = "Todo Telescope" })
+keymap("n", "<leader>nt", "<cmd>TodoTelescope keywords=TODO<cr>", { desc = "Todo Telescope" })
+keymap("n", "<leader>nb", "<cmd>TodoTelescope keywords=BUG<cr>", { desc = "Todo Telescope" })
 
 -- Lazygit
 local Terminal  = require('toggleterm.terminal').Terminal
